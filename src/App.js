@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect  } from 'react';
 import Formulario from './components/Formulario';
 import Cancion from './components/Cancion';
+import Info from './components/Info';
 import axios from 'axios';
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
     
   const [ letra, guardarLetra] = useState('');
 
-  const [ info, guardarInfo] = useState([]);
+  const [ info, guardarInfo] = useState({});
 
   useEffect(() => {
     if(Object.keys(busquedaLetra).length === 0 ) return;
@@ -25,15 +26,15 @@ function App() {
         axios(url2)
       ]);
 
-      console.log(letra.data.lyrics);
-      console.log(informacion);
+      // console.log(letra.data.lyrics);
+      // console.log(informacion);
       guardarLetra(letra.data.lyrics);
       guardarInfo(informacion.data.artists[0]);
 
       // guardarLetra(resultado.data.lyrics);
     }
     consultarApiLetra();
-  }, [busquedaLetra]);
+  }, [busquedaLetra, info]);
 
   return (
     <Fragment>
@@ -43,7 +44,9 @@ function App() {
       <div className="container mt-5">
         <div className="row">
           <div className="col-md-6">
-
+            <Info 
+              info={info}
+            />
           </div>
           <div className="col-md-6">
             <Cancion 
