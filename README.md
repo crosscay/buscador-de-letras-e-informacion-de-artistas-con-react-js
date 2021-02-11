@@ -12,7 +12,7 @@ Aplicación creada en react js para realizar busquedas de letras e informacion d
 Para iniciar el proyecto utilice:
 
 ```bash
-$ git clon https://github.com/crosscay/buscador-de-letras-e-informacion-de-artistas-con-react-js.git
+$ git clon https://github.com/crosscay/buscador-de-letras-e-informacion-de-artistas-react-js.git
 $ cd buscador-de-letras-e-informacion-de-artistas-react
 # instala las dependencias del proyecto
 $ npm i
