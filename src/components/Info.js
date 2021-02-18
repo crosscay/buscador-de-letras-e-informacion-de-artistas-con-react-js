@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 const Info = ({info}) => {
     if(Object.keys(info).length === 0) {
